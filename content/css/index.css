@@ -1,0 +1,15 @@
+body
+{
+	font-family: Arial;
+	font-size: 18px;
+}
+
+table
+{
+	width: 700px;
+}
+
+tbody tr:hover
+{
+	background: lightblue;
+}

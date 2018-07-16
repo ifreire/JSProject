@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Insert title here</title>
+
+		<script type="text/javascript" src="content/js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="content/js/Init.js"></script>
+		<script type="text/javascript" src="content/js/index.js"></script>
+		<script type="text/javascript" src="content/js/createHtmlElements.js"></script>
+		
+		<script type="text/javascript" src="content/js/ws_client/common_functions.js"></script>
+
+		<script type="text/javascript" src="content/js/ws_client/posts/listAllPosts.js"></script>
+		<script type="text/javascript" src="content/js/ws_client/posts/listPostByID.js"></script>
+		<script type="text/javascript" src="content/js/ws_client/posts/addNewPost.js"></script>
+
+		<link rel="stylesheet" href="content/css/index.css" />
+	</head>
+
+	<body id="body">
+		<h2>~/eclipse-workspace/JSProject/index.html</h2>
+
+		<div>
+			<input id="idPost" type="text" hidden />
+
+			<label for="titlePost">Title</label><br />
+			<input id="titlePost" type="text" />
+
+			<br />
+
+			<label for="contentPost">Content</label><br />
+			<textarea id="contentPost" rows="4" cols="50" ></textarea>
+
+			<br />
+
+			<input id="btn_insert_post" type="button" value="Add" />
+			<input id="btn_cancel_post" type="button" value="Cancel" />
+		</div>
+
+		<div>
+			Post ID: 
+			<input id="id_post" type="text" />
+
+			<input id="btn_list_post_by_id" type="button" value="List selected post" />
+			<input id="btn_list_all_posts" type="button" value="List all posts" />
+		</div>
+
+		<div id="response"></div>
+
+		<div id="tables">
+			<table id="postsTable">
+				<thead>
+				<tr>
+					<th>ID</th>
+					<th>Título</th>
+					<th>Conteúdo</th>
+					<th></th>
+					<th></th>
+				</tr>
+				</thead>
+
+				<tbody id="t_body">
+				</tbody>
+			</table>
+
+			<input id="btn_clear_tbody" type="button" value="Clear" />
+		</div>
+	</body>
+</html>
