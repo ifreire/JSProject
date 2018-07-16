@@ -1,2 +1,2 @@
 # JSProject
-Client to simple-ws-flask project.
+Client to <a href="https://github.com/ifreire/simple-ws-flask">simple ws flask</a> project.
