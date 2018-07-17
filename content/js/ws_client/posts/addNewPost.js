@@ -41,7 +41,7 @@ function addSavePost(isNewPost)
 
     submitPost(post, isNewPost);
     reloadAllPosts();
-    calcelPost();
+    cancelPost();
 }
 
 function clearFormPost()
@@ -69,7 +69,7 @@ function fillFormEditPost(identifier, id)
     elementPost.value = td_element.innerHTML;
 }
 
-function calcelPost()
+function cancelPost()
 {
     changeButtonAddSave("Add");
     clearFormPost();
@@ -89,11 +89,7 @@ function submitPost(post, isNewPost)
     if (isNewPost) url = url + "new_post";
     else url = url + post.id;
 
-    log(httpVerb);
-    log(url);
-
     var req = new XMLHttpRequest();
-    
     req.open(httpVerb, url, true);
     req.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
     req.send(JSON.stringify(post));
@@ -108,7 +104,7 @@ function deletePost(id)
 {
     deletePostById(id);
     reloadAllPosts();
-    calcelPost();
+    cancelPost();
 }
 
 function deletePostById(id)

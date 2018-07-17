@@ -15,7 +15,7 @@ function init(e)
     });
 
     $("#btn_cancel_post").click(function (event) {
-        calcelPost();
+        cancelPost();
     });
     
     $("#t_body").on("click", "input", function() {

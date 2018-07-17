@@ -1,7 +1,7 @@
 function getURLheroku()
 {
-    //return Event.WS_HEROKU;
-    return Event.WS_LOCAL;
+    return Event.WS_HEROKU;
+    //return Event.WS_LOCAL;
 }
 
 function reloadAllPosts()
@@ -27,11 +27,6 @@ function processPost(post)
     fillTablePosts(post);
 }
 
-//function getElementById(id)
-//{
-//    return document.getElementById(id);
-//}
-
 function log(text)
 {
     console.log(text);
@@ -44,10 +39,15 @@ function clearElementById(id)
 
 function clearTextById(id)
 {
-    document.getElementById(id).innerHTML = "";
+    clearElementInnerHTMLById(id);
 }
 
 function clearTBodyById(id)
+{
+    clearElementInnerHTMLById(id);
+}
+
+function clearElementInnerHTMLById(id)
 {
     document.getElementById(id).innerHTML = "";
 }
