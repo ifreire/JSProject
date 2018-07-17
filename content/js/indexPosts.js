@@ -2,6 +2,8 @@ document.addEventListener(Event.DOM_CONTENT_LOADED, init);
 
 function init(e)
 {
+    document.getElementById("local").innerHTML = window.location.pathname;
+
     $("#btn_list_post_by_id").click(function (event) {
     	listPostByID(document.getElementById("id_post").value);
     });
@@ -26,33 +28,3 @@ function init(e)
         clearTBodyById("t_body");
     });
 }
-
-/*
-function buscando_dados()
-{
-    $.post('ajax.php', {}, function(dados)
-    {
-        alert(dados); 
-    });
-}
-function buscar_dados()
-{
-    buscando_dados();
-    alert('prosseguindo'); //Prosseguindo está função sem esperar a outra acabar a requisição
-}
-
-function buscando_dados(func)
-{
-    $.post('ajax.php', {}, function(dados)
-    {
-        func.call(this, dados);
-    });
-}
-
-function buscar_dados(){
-    buscando_dados(function(dados)
-    {
-        alert('prosseguindo'); //Prosseguindo está função sem esperar a outra acabar a 
-    });
-}
-*/
