@@ -8,8 +8,6 @@ function listPostByID(id)
 	
     var url = getURLheroku() + "posts/" + id;
 
-    log(url);
-
     var req = new XMLHttpRequest();
     req.onloadend = processGetPost;
     req.responseType = 'json';

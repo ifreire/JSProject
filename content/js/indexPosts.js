@@ -27,8 +27,7 @@ function init(e)
     });
 }
 
-
-
+/*
 function buscando_dados()
 {
     $.post('ajax.php', {}, function(dados)
@@ -56,3 +55,4 @@ function buscar_dados(){
         alert('prosseguindo'); //Prosseguindo está função sem esperar a outra acabar a 
     });
 }
+*/

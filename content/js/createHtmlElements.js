@@ -27,7 +27,7 @@ function createAppend(elementType, elementValue, elementId, elementFunction)
     }
     catch(err)
     {
-        console.log(err);
+        log(err);
         alert(err);
         throw("");
     }
