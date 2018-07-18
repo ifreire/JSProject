@@ -2,7 +2,7 @@ document.addEventListener(Event.DOM_CONTENT_LOADED, init);
 
 function init(e)
 {
-    document.getElementById("local").innerHTML = window.location.pathname;
+    document.getElementById("local").innerHTML = window.location.href;
 
     $("#btn_list_post_by_id").click(function (event) {
     	listPostByID(document.getElementById("id_post").value);
