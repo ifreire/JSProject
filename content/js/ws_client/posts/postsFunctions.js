@@ -46,13 +46,13 @@ function changeButtonAddSave(newValue)
     btnAddSave.value = newValue;
 }
 
-function reloadAllPosts()
-{
-    //  REMOVER TIMEOUT EM FAVOR DO ASSINCRONISMO...
-    setTimeout(function() {
-        listAllPosts();
-    }, Event.WS_TIMEOUT);
-}
+//function reloadAllPosts()
+//{
+//    //  REMOVER TIMEOUT EM FAVOR DO ASSINCRONISMO...
+//    setTimeout(function() {
+//        listAllPosts();
+//    }, Event.WS_TIMEOUT);
+//}
 
 function processPosts(posts)
 {

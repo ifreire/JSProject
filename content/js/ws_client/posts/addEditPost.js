@@ -19,7 +19,7 @@ function addSavePost(isNewPost)
     };
 
     submitPost(post, isNewPost);
-    reloadAllPosts();
+    //reloadAllPosts();
     cancelPost();
 }
 
@@ -43,11 +43,7 @@ function submitPost(post, isNewPost)
 
     var req = new XMLHttpRequest();
     req.open(httpVerb, url, true);
+    req.onloadend = listAllPosts;
     req.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
     req.send(JSON.stringify(post));
-    
-    function processError(result)
-    {
-        log("Deu erro...");
-    }
 }
