@@ -46,14 +46,6 @@ function changeButtonAddSave(newValue)
     btnAddSave.value = newValue;
 }
 
-//function reloadAllPosts()
-//{
-//    //  REMOVER TIMEOUT EM FAVOR DO ASSINCRONISMO...
-//    setTimeout(function() {
-//        listAllPosts();
-//    }, Event.WS_TIMEOUT);
-//}
-
 function processPosts(posts)
 {
     clearTBodyById("t_body");
@@ -80,8 +72,8 @@ function fillTablePosts(post)
     tr.appendChild(createHtmlElement("text", "td", id, id, "id"));
     tr.appendChild(createHtmlElement("text", "td", title, id, "title"));
     tr.appendChild(createHtmlElement("text", "td", content, id, "content"));
-    tr.appendChild(createHtmlElement("button", "td", content, id, "Edit"));
-    tr.appendChild(createHtmlElement("button", "td", content, id, "Delete"));
+    tr.appendChild(createHtmlElement("button", "td", "", id, "Edit"));
+    tr.appendChild(createHtmlElement("button", "td", "", id, "Delete"));
     
     document.getElementById("t_body").appendChild(tr);
 }

@@ -19,7 +19,6 @@ function addSavePost(isNewPost)
     };
 
     submitPost(post, isNewPost);
-    //reloadAllPosts();
     cancelPost();
 }
 

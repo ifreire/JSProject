@@ -1,7 +1,6 @@
 function deletePost(id)
 {
     deletePostById(id);
-    //reloadAllPosts();
     cancelPost();
 }
 
