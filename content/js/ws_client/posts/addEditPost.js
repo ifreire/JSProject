@@ -15,11 +15,13 @@ function addSavePost(isNewPost)
     var post = {
         id : document.getElementById("idPost").value,
         title : document.getElementById("titlePost").value,
-        content : document.getElementById("contentPost").value
+        content : document.getElementById("contentPost").value,
+        emitDate : document.getElementById("emitDatePost").value,
+        expireDate : document.getElementById("expireDatePost").value
     };
 
-    submitPost(post, isNewPost);
     cancelPost();
+    submitPost(post, isNewPost);
 }
 
 function editPost(obj)
@@ -30,6 +32,8 @@ function editPost(obj)
     fillFormEditPost("id", id);
     fillFormEditPost("title", id);
     fillFormEditPost("content", id);
+    fillFormEditPost("emitDate", id);
+    fillFormEditPost("expireDate", id);
 }
 
 function submitPost(post, isNewPost)

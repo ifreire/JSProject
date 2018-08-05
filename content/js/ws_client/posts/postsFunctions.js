@@ -24,6 +24,8 @@ function clearFormPost()
     clearElementById("idPost");
     clearElementById("titlePost");
     clearElementById("contentPost");
+    clearElementById("emitDatePost");
+    clearElementById("expireDatePost");
 }
 
 function fillFormEditPost(identifier, id)
@@ -67,11 +69,15 @@ function fillTablePosts(post)
     var id = post.id.toString();
     var title = post.title;
     var content = post.content;
+    var emitDate = post.emitDate;
+    var expireDate = post.expireDate;
     
     var tr = document.createElement("tr");
     tr.appendChild(createHtmlElement("text", "td", id, id, "id"));
     tr.appendChild(createHtmlElement("text", "td", title, id, "title"));
     tr.appendChild(createHtmlElement("text", "td", content, id, "content"));
+    tr.appendChild(createHtmlElement("text", "td", emitDate, id, "emitDate"));
+    tr.appendChild(createHtmlElement("text", "td", expireDate, id, "expireDate"));
     tr.appendChild(createHtmlElement("button", "td", "", id, "Edit"));
     tr.appendChild(createHtmlElement("button", "td", "", id, "Delete"));
     

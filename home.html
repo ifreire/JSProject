@@ -26,18 +26,30 @@
 		<div>
 			<input id="idPost" type="text" hidden />
 
-			<label for="titlePost">Title</label><br />
+			<label for="titlePost">Assunto</label><br />
 			<input id="titlePost" type="text" />
 
-			<br />
+			<br /><br />
 
-			<label for="contentPost">Content</label><br />
+			<label for="contentPost">Texto</label><br />
 			<textarea id="contentPost" rows="4" cols="50" ></textarea>
 
-			<br />
+			<br /><br />
+
+			<label for="emitDatePost">Emissão</label><br />
+			<input id="emitDatePost" type="text" />
+
+			<br /><br />
+
+			<label for="expireDatePost">Validade</label><br />
+			<input id="expireDatePost" type="text" />
+
+			<br /><br />
 
 			<input id="btn_insert_post" type="button" value="Add" />
 			<input id="btn_cancel_post" type="button" value="Cancel" />
+
+			<br /><br />
 		</div>
 
 		<div>
@@ -46,6 +58,8 @@
 
 			<input id="btn_list_post_by_id" type="button" value="List selected post" />
 			<input id="btn_list_all_posts" type="button" value="List all posts" />
+
+			<br />
 		</div>
 
 		<div id="response"></div>
@@ -56,7 +70,9 @@
 				<tr>
 					<th>ID</th>
 					<th>Título</th>
-					<th>Conteúdo</th>
+					<th>Text</th>
+					<th>Emissão</th>
+					<th>Validade</th>
 					<th></th>
 					<th></th>
 				</tr>
