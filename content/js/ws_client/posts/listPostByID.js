@@ -1,11 +1,5 @@
 function listPostByID(id)
 {
-	if (id == "" || id <= 0)
-	{
-		alert("Digite um ID!");
-		return;
-	}
-	
     var url = getURLheroku() + "posts/" + id;
 
     var req = new XMLHttpRequest();
