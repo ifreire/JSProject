@@ -4,12 +4,16 @@ function init(e)
 {
     document.getElementById("local").innerHTML = window.location.href;
 
-    $("#btn_list_post_by_id").click(function (event) {
-    	listPostByID(document.getElementById("id_post").value);
-    });
+    //$("#btn_list_post_by_id").click(function (event) {
+    //    listPostByID(document.getElementById("id_post").value);
+    //});
     
-    $("#btn_list_all_posts").click(function (event) {
-        listAllPosts();
+    //$("#btn_list_all_posts").click(function (event) {
+    //    listAllPosts();
+    //});
+    
+    $("#btn_list_posts").click(function (event) {
+        listPosts();
     });
     
     $("#btn_insert_post").click(function (event) {
