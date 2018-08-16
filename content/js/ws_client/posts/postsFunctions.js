@@ -1,3 +1,13 @@
+function listPosts()
+{
+    var id_post = document.getElementById("id_post").value.toString();
+    
+    if (id_post != "")
+        listPostByID(id_post);
+    else
+        listAllPosts();
+}
+
 function saveDeletePost(obj)
 {
     var btnAddSaveDelete = obj;
