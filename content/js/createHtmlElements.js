@@ -41,7 +41,23 @@ function createInput(elementType, idValue, textValue)
 
     if (elementType == "button")
     {
-        button.setAttribute("class", "btn" + textValue);
+        var classValue = "";
+
+        switch(textValue)
+        {
+            case "Edit":
+                classValue = "button-secondary";
+                break;
+            case "Delete":
+                classValue = "button-error";
+                break;
+            default:
+                throw("The function createAppend needs an elementType!");
+                alert(err);
+                break;
+        }
+
+        button.setAttribute("class", "pure-button " + classValue);
         button.setAttribute("id", textValue + "_" + idValue);
     }
     else if (elementType == "text")

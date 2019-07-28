@@ -1,89 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Insert title here</title>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Insert title here</title>
 
-		<script type="text/javascript" src="content/js/jquery-3.3.1.js"></script>
-		<script type="text/javascript" src="content/js/Init.js"></script>
-		<script type="text/javascript" src="content/js/indexPosts.js"></script>
-		<script type="text/javascript" src="content/js/createHtmlElements.js"></script>
-		
-		<script type="text/javascript" src="content/js/ws_client/common_functions.js"></script>
+        <script type="text/javascript" src="content/js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="content/js/Init.js"></script>
+        <script type="text/javascript" src="content/js/indexPosts.js"></script>
+        <script type="text/javascript" src="content/js/createHtmlElements.js"></script>
 
-		<script type="text/javascript" src="content/js/ws_client/posts/addEditPost.js"></script>
-		<script type="text/javascript" src="content/js/ws_client/posts/deletePost.js"></script>
-		<script type="text/javascript" src="content/js/ws_client/posts/listAllPosts.js"></script>
-		<script type="text/javascript" src="content/js/ws_client/posts/listPostByID.js"></script>
-		<script type="text/javascript" src="content/js/ws_client/posts/postsFunctions.js"></script>
+        <script type="text/javascript" src="content/js/ws_client/common_functions.js"></script>
 
-		<link rel="stylesheet" href="content/css/index.css" />
-	</head>
+        <script type="text/javascript" src="content/js/ws_client/posts/addEditPost.js"></script>
+        <script type="text/javascript" src="content/js/ws_client/posts/deletePost.js"></script>
+        <script type="text/javascript" src="content/js/ws_client/posts/listAllPosts.js"></script>
+        <script type="text/javascript" src="content/js/ws_client/posts/listPostByID.js"></script>
+        <script type="text/javascript" src="content/js/ws_client/posts/postsFunctions.js"></script>
 
-	<body id="body">
-		<h2 id="local"></h2>
+        <link rel="stylesheet" href="content/purecss/pure.css" />
+        <link rel="stylesheet" href="content/css/index.css" />
+    </head>
 
-		<div>
-			<input id="idPost" type="text" hidden />
+    <body id="body">
+        <h2 id="local"></h2>
 
-			<label for="titlePost">Assunto</label><br />
-			<input id="titlePost" type="text" />
+        <form class="pure-form pure-form-aligned">
+            <fieldset>
+                <input id="idPost" type="text" hidden />
+                
+                <div class="pure-control-group">
+                    <label for="titlePost">Assunto</label>
+                    <input id="titlePost" type="text" />
+                </div>
 
-			<br /><br />
+                <div class="pure-control-group">
+                    <label for="contentPost">Texto</label>
+                    <textarea id="contentPost" rows="4" cols="50" ></textarea>
+                </div>
 
-			<label for="contentPost">Texto</label><br />
-			<textarea id="contentPost" rows="4" cols="50" ></textarea>
+                <div class="pure-control-group">
+                    <label for="emitDatePost">Emissão</label>
+                    <input id="emitDatePost" type="text" />
+                </div>
 
-			<br /><br />
+                <div class="pure-control-group">
+                    <label for="expireDatePost">Validade</label>
+                    <input id="expireDatePost" type="text" />
+                </div>
 
-			<label for="emitDatePost">Emissão</label><br />
-			<input id="emitDatePost" type="text" />
+                <div class="pure-controls">
+                    <input id="btn_insert_post" type="button" class="pure-button button-primary" value="Add" />
+                    <input id="btn_cancel_post" type="button" class="pure-button button" value="Cancel" />
+                </div>
+            </fieldset>
+        </form>
 
-			<br /><br />
+        <br />
 
-			<label for="expireDatePost">Validade</label><br />
-			<input id="expireDatePost" type="text" />
+        <form class="pure-form pure-form-aligned">
+            <fieldset>
+                <div class="pure-control-group">
+                    <label for="titlePost">Post ID</label>
+                    <input id="id_post" type="text" />
+                    <input id="btn_list_posts" type="button" class="pure-button button-success" value="List" />
+                </div>
+            </fieldset>
+        </form>
 
-			<br /><br />
+        <div id="response"></div>
 
-			<input id="btn_insert_post" type="button" value="Add" />
-			<input id="btn_cancel_post" type="button" value="Cancel" />
+        <br />
 
-			<br /><br />
-		</div>
+        <div id="tables">
+            <table id="postsTable" class="pure-table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Título</th>
+                        <th>Text</th>
+                        <th>Emissão</th>
+                        <th>Validade</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
 
-		<div>
-			Post ID: 
-			<input id="id_post" type="text" />
+                <tbody id="t_body">
+                </tbody>
+            </table>
 
-			<!-- <input id="btn_list_post_by_id" type="button" value="List selected post" /> -->
-			<!-- <input id="btn_list_all_posts" type="button" value="List all posts" /> -->
-			<input id="btn_list_posts" type="button" value="List" />
+            <br />
 
-			<br />
-		</div>
+            <input id="btn_clear_tbody" type="button" class="pure-button button-warning" value="Clear" />
 
-		<div id="response"></div>
-
-		<div id="tables">
-			<table id="postsTable">
-				<thead>
-				<tr>
-					<th>ID</th>
-					<th>Título</th>
-					<th>Text</th>
-					<th>Emissão</th>
-					<th>Validade</th>
-					<th></th>
-					<th></th>
-				</tr>
-				</thead>
-
-				<tbody id="t_body">
-				</tbody>
-			</table>
-
-			<input id="btn_clear_tbody" type="button" value="Clear" />
-		</div>
-	</body>
+            <br /><br />
+        </div>
+    </body>
 </html>

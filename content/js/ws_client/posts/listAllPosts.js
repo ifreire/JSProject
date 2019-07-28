@@ -15,6 +15,11 @@ function listAllPosts()
     		alert("Nenhum post encontrado!");
 		}
     	else if (req.status === 200 && req.readyState === 4)
-            processPosts(req.response); 
+        {
+            processPosts(req.response);
+            
+        }
+
+        
     }
 }

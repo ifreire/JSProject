@@ -1,7 +1,7 @@
 function getURLheroku()
 {
-    //return Event.WS_HEROKU;
-    return Event.WS_LOCAL;
+    return Event.WS_HEROKU;
+    //return Event.WS_LOCAL;
 }
 
 function log(text)
